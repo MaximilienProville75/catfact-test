@@ -5,9 +5,9 @@ const getCats = async () => {
 };
 
 const getFact = async () => {
-  const response = await fetch("https://catfact.ninja/fact");
+  const response = await fetch("https://catfact.ninja/facts");
   const fact = await response.json();
-  return fact;
+  return fact.data;
 };
 
 export { getCats, getFact };

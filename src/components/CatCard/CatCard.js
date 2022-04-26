@@ -2,7 +2,6 @@ import React from "react";
 import { Tooltip } from "../ToolTip/ToolTip";
 
 export const CatCard = (cat) => {
-  console.log(cat.fact);
   return (
     <>
       <Tooltip content={cat.fact} direction="top">

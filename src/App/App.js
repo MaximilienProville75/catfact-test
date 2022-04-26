@@ -9,25 +9,25 @@ import { getCats, getFact } from "../services/cat.js";
 
 function App() {
   const [cats, setCats] = useState([]);
-  const [fact, setFact] = useState("");
+  const [facts, setFacts] = useState([]);
 
   useEffect(() => {
     const fetchCats = async () => {
       const cats = await getCats();
       setCats(cats);
     };
-    const fetchFact = async () => {
-      const fact = await getFact();
-      setFact(fact);
+    const fetchFacts = async () => {
+      const facts = await getFact();
+      setFacts(facts);
     };
     fetchCats();
-    fetchFact();
+    fetchFacts();
   }, []);
 
   return (
     <>
       <Header />
-      <CatCardList props={cats} {...fact} />
+      <CatCardList props={cats} facts={facts} />
       <Footer />
     </>
   );
